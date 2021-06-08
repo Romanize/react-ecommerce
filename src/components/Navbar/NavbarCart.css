@@ -1,0 +1,8 @@
+.NavbarCart a{
+    margin-right: .5rem
+}
+
+.navbarCart__Badge span{
+    background-color: var(--red);
+    color: white;
+}

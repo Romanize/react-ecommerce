@@ -1,0 +1,12 @@
+.NavbarBrand a img{
+    max-height: 4rem;
+    margin: 0 .2rem;
+}
+
+.NavbarBrand a{
+    display: flex;
+    align-items: center;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 700;
+}

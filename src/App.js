@@ -16,6 +16,7 @@ function App() {
         ...product,
         qty
     }
+
     console.log(productToAdd)
     setCart([...cart, productToAdd])
   }
@@ -24,7 +25,7 @@ function App() {
     { 
         id: 1,
         name: 'Zapato',
-        talla: 3,
+        talla: 39,
         color: 'Blanco',
         stock: 7
     },

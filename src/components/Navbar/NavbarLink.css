@@ -1,9 +1,0 @@
-.NavbarLink{
-    padding:.3rem;
-    text-decoration: none;
-    color: var(--dark)
-}
-
-.NavbarLink:hover{
-    text-decoration: underline .15rem var(--red);
-}

@@ -1,8 +1,0 @@
-.NavbarNav{
-    display: flex;
-    align-items: center;
-}
-
-.NavbarNav > *{
-    margin-right: .7rem;
-}

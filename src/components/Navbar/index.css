@@ -5,3 +5,7 @@
     border-bottom: solid 2px var(--gray);
     height: 4rem;
 }
+
+.Navbar__right {
+    display: flex;
+}

@@ -1,14 +1,18 @@
 import React from 'react';
-import './Navbar.css';
+import './index.css';
 import NavbarBrand from './NavbarBrand';
 import NavbarNav from './NavbarNav';
+import NavbarCart from './NavbarCart';
 
 
 const Navbar = () => {
     return ( 
         <div className="Navbar">
             <NavbarBrand />
-            <NavbarNav />
+            <div class="Navbar__right">
+                <NavbarNav />
+                <NavbarCart />
+            </div>
         </div>
      );
 }

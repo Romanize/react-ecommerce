@@ -1,7 +1,6 @@
 import React from 'react'
 import './NavbarNav.css'
 import NavbarLink from './NavbarLink'
-import NavbarCart from './NavbarCart'
 
 function NavbarNav() {
     return (
@@ -22,7 +21,6 @@ function NavbarNav() {
                 title='Account'
                 url='/account'
             />
-            <NavbarCart />
         </div>
     )
 }

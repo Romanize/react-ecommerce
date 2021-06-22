@@ -1,12 +1,12 @@
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { IconButton, Badge } from '@material-ui/core';
-import './NavbarCart.css'
+import './index.css'
 
-function NavbarCart({cart}) {
+function CartWidget({cart}) {
     return (
         <div>
-            <IconButton className="NavbarCart">
-                <Badge badgeContent={cart.length || '0'} className="navbarCart__Badge">
+            <IconButton>
+                <Badge badgeContent={cart.length.toString()} className="Cart__Badge">
                     <ShoppingCartIcon />
                 </Badge>
             </IconButton>
@@ -14,4 +14,4 @@ function NavbarCart({cart}) {
     )
 }
 
-export default NavbarCart
+export default CartWidget

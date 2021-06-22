@@ -1,0 +1,33 @@
+.ItemCard{
+    text-align: center;
+    /* background: rgba(255,255,255,0.2); */
+    background: red;
+    border-radius: 1rem;
+    overflow: visible;
+}
+
+.ItemCard h3{
+    margin-top: .5rem
+}
+
+.ItemCard img{
+    margin-top: 1rem;
+    width: 80%;
+}
+
+.ItemCard:hover img{
+    transform: scale(1.2) translateY(-1rem);
+}
+
+.ItemCard__inputs{
+    display: flex;
+    overflow: hidden;
+    border-radius: 0 0 .5rem .5rem;
+    justify-content: space-around;
+}
+
+.ItemCard__inputs--buy{
+    background: yellow;
+    height: 35px;
+    width: 100%;
+}

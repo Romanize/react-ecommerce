@@ -1,4 +1,4 @@
-.navbarCart__Badge span{
+.Cart__Badge span{
     background-color: var(--red);
     color: white;
 }

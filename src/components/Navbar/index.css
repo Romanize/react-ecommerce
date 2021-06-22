@@ -16,16 +16,19 @@
     align-items: center;
     color: var(--dark);
     text-decoration: none;
+    white-space: nowrap;
+    font-size: 1.75rem;
+    font-weight: 700;
 }
 
 .NavbarLink{
     padding:.3rem;
     text-decoration: none;
-    color: var(--dark)
+    color: var(--dark);
 }
 
 .NavbarLink:hover{
-    text-decoration: underline .15rem var(--red);
+    text-decoration: underline .15rem var(--red);;
 }
 
 .NavbarNav{

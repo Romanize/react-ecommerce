@@ -1,0 +1,12 @@
+.ItemCounter input{
+    width: 1rem;
+    background: transparent;
+    border: none;
+    margin: 0 1rem;
+}
+
+.ItemCounter button{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}

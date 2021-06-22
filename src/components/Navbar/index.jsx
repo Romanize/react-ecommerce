@@ -1,37 +1,29 @@
-import React from 'react';
 import './index.css';
-import NavbarCart from './NavbarCart';
-import { Typography } from '@material-ui/core';
+import CartWidget from '../CartWidget';
 import logo from '../../assets/BrandLogo.png'
+import { BrandName, links } from '../../config'
 
 
 const Navbar = ({cart}) => {
 
-    const links = {
-        "Home": "/index",
-        "About": "/about",
-        "Contact": "/contact",
-        "Account": "/account",
-    }
-
     const nav = []
-    for(let link in links){
+    for(let link in links){ //TODO -- LINK TO REQUIRED
         nav.push(<a href={links[link]} className="NavbarLink" key={link}>{link} </a>) 
     }
 
     return ( 
         <div className="Navbar">
+            {/* Left Side */}
             <div className="NavbarBrand">
                 <a href="/index">
                     <img src={logo} alt="Brand Logo" />
-                    <Typography variant="h6" color="inherit">
-                        Brand Name
-                    </Typography>
+                    {BrandName}
                 </a>
             </div>
+            {/* Right Side */}
             <div className="NavbarNav">
                 {nav}
-                <NavbarCart cart={cart}/>
+                <CartWidget cart={cart}/>
             </div>
         </div>
      );

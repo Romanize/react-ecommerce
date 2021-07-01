@@ -1,0 +1,5 @@
+.ItemDetailWrapper{
+    height: 50%;
+    display: flex;
+    border: solid 2px black
+}

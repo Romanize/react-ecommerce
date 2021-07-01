@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar'
 import ItemsListContainer from './containers/ItemsListContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer';
 
 
 function App() {
@@ -26,7 +27,10 @@ function App() {
         {/* Banner Principal */}
         {/* lista de mas importantes */}
         <div> {/*TODO-Home view*/}
-          <ItemsListContainer handleCart={handleCart} />
+          {/* <ItemsListContainer handleCart={handleCart} /> */}
+        </div>
+        <div> {/*TODO-Item Detail View*/}
+          <ItemDetailContainer handleCart={handleCart} />
         </div>
         {/* Secciones */}
         {/* Footer */}

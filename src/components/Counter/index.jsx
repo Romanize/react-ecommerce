@@ -1,14 +1,9 @@
 import {useState} from 'react'
 import './index.css'
 
-function Counter({stock, id}) {
+function Counter({item, handleCart}) {
 
     const [qty,setQty] = useState(0)
-
-    const handleInput = (e) => {
-        const value = e.target.value;
-        setQty(value)
-    }
 
     const reduceQty = () => {
         if(qty>0){
@@ -16,17 +11,20 @@ function Counter({stock, id}) {
         }
     }
     const sumQty = () => {
-        if(qty<stock){
+        if(qty<item.stock){
             setQty(qty+1)
         }
     }
 
     return (
-        <div className="ItemCounter">
-            <button onClick={reduceQty}>-</button>
-            <input type="text" id={'Item'+id} value={qty} onChange={e=>handleInput(e)}/>
-            <button onClick={sumQty}>+</button>
-        </div>
+        <>
+            <div className="ItemCounter">
+                <button onClick={reduceQty}>-</button>
+                <input type="text" id={'Item'+item.id} value={qty} readOnly/>
+                <button onClick={sumQty}>+</button>
+            </div>
+            <button onClick={()=> handleCart(item)}>BUY</button>
+        </>
     )
 }
 

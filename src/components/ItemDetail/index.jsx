@@ -12,8 +12,6 @@ const ItemDetail = ({item}) => {
         setAddedItem(qtytoAdd)
     }
 
-    const isAvailable = item.stock > 0
-
     return (
         <div className='ItemDetailWrapper'>
             <div>
@@ -24,16 +22,10 @@ const ItemDetail = ({item}) => {
                 <h3>Descripción: {item.description}</h3>
                 <span>Precio:{item.price}</span><br />
                 <span>Stock : {item.stock}</span>
-                {isAvailable ? 
-                    (addedItem ? 
-                        <div>
-                            <button><Link to='/cart' />Checkout</button> 
-                        </div>
-                    : 
-                        <ItemCount item={item} onAdd={onAdd}/>)
-                 : 
-                 <p>Out of stock</p>}
-                
+                {addedItem ? 
+                    <div><Link to='/cart' ><button>Checkout</button></Link></div>
+                : 
+                    <ItemCount item={item} onAdd={onAdd}/>}             
             </div>
         </div>
     )

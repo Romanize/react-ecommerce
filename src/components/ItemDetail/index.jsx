@@ -1,9 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './index.css'
+import {Link} from 'react-router-dom'
 
-import Counter from '../Counter'
+import ItemCount from '../ItemCount'
 
-const ItemDetail = ({item, handleCart}) => {
+const ItemDetail = ({item}) => {
+
+    const [addedItem,setAddedItem] = useState(null)
+
+    const onAdd = (qtytoAdd) => {
+        setAddedItem(qtytoAdd)
+    }
+
+    const isAvailable = item.stock > 0
+
     return (
         <div className='ItemDetailWrapper'>
             <div>
@@ -14,7 +24,16 @@ const ItemDetail = ({item, handleCart}) => {
                 <h3>Descripción: {item.description}</h3>
                 <span>Precio:{item.price}</span><br />
                 <span>Stock : {item.stock}</span>
-                <Counter item={item} handleCart={handleCart}/>
+                {isAvailable ? 
+                    (addedItem ? 
+                        <div>
+                            <button><Link to='/cart' />Checkout</button> 
+                        </div>
+                    : 
+                        <ItemCount item={item} onAdd={onAdd}/>)
+                 : 
+                 <p>Out of stock</p>}
+                
             </div>
         </div>
     )

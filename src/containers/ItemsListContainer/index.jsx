@@ -3,7 +3,7 @@ import './index.css'
 import ItemsList from '../../components/ItemsList'
 import { useParams } from 'react-router-dom'
 
-function ItemsListContainer({ handleCart }) {
+function ItemsListContainer() {
 
     const {id} = useParams();
 
@@ -22,7 +22,7 @@ function ItemsListContainer({ handleCart }) {
     return (
         <div>
             <div className='favItemsListContainer'>
-                <ItemsList items={items} handleCart={handleCart}/>
+                <ItemsList items={items}/>
             </div> 
         </div>
     )

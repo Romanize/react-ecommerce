@@ -3,7 +3,7 @@ import './index.css'
 import ItemDetail from '../../components/ItemDetail'
 import {useParams} from 'react-router-dom'
 
-function ItemDetailContainer({ handleCart }) {
+function ItemDetailContainer() {
     const {id} = useParams()
 
     const [item, setItem] = useState({})
@@ -21,7 +21,7 @@ function ItemDetailContainer({ handleCart }) {
     return (
         <div>
             <div className='ItemDetailContainer'>
-                {item && <ItemDetail item={item} handleCart={handleCart}/>}
+                <ItemDetail item={item}/>
             </div> 
         </div>
     )

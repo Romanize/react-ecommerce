@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar'
 import ItemsListContainer from './containers/ItemsListContainer';
@@ -8,30 +7,16 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 function App() {
 
-  const [cart, setCart] = useState([])
-
-  const handleCart = (item) => {
-    const qty = document.getElementById('Item'+item.id).value
-
-    const productToAdd = {
-        ...item,
-        qty
-    }
-
-    console.log(productToAdd)
-    setCart([...cart, productToAdd])
-  }
-
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar cart={cart}/>
+        <Navbar/>
           <Switch>
           {/* Banner Principal */}
           {/* lista de mas importantes */}
-          <Route exact path="/" component={()=><ItemsListContainer handleCart={handleCart}/>}/>
-          <Route path="/category/:id" component={()=><ItemsListContainer handleCart={handleCart}/>}/>
-          <Route path="/item/:id" component={()=><ItemDetailContainer handleCart={handleCart}/>}/>
+          <Route exact path="/" component={ItemsListContainer}/>
+          <Route path="/category/:id" component={ItemsListContainer}/>
+          <Route path="/item/:id"component={ItemDetailContainer}/>
           {/* Secciones */}
           </Switch>
         {/* Footer */}

@@ -1,0 +1,23 @@
+.ItemCounter__input{
+    width: 1rem;
+    background: transparent;
+    border: none;
+    margin: 0 1rem;
+    -moz-appearance: textfield;
+}
+
+.ItemCounter__input::-webkit-outer-spin-button,
+.ItemCounter__input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0
+}
+
+.ItemCounter button{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.ItemCounter__error{
+    color: var(--red)
+}

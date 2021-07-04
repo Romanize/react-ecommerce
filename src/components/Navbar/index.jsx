@@ -5,7 +5,7 @@ import { BrandName, links } from '../../config'
 import { Link } from 'react-router-dom'
 
 
-const Navbar = ({cart}) => {
+const Navbar = () => {
 
     const nav = []
     for(let link in links){ //TODO -- LINK TO REQUIRED
@@ -30,7 +30,7 @@ const Navbar = ({cart}) => {
                     <li><Link to="/category/juguetes">Juguetes</Link></li>
                 </ul>
                 {/* {nav} */}
-                <CartWidget cart={cart}/>
+                <CartWidget/>
             </div>
         </div>
      );

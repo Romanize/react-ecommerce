@@ -1,34 +1,38 @@
 [ 
     { 
-        "id": 1,
+        "id": "1",
         "title": "Zapato",
         "description": "lorem ipsum",
         "price": 6000,
         "stock": 7,
-        "pictureURL": "https://picsum.photos/200"
+        "pictureURL": "https://picsum.photos/200",
+        "category": "zapatos"
     },
     { 
-        "id": 2,
+        "id": "2",
         "title": "Pantalon",
         "description": "lorem ipsum",
         "price": 3000,
         "stock": 3,
-        "pictureURL": "https://picsum.photos/200"
+        "pictureURL": "https://picsum.photos/200",
+        "category": "pantalones"
     },
     { 
-        "id": 3,
+        "id": "3",
         "title": "Remera",
         "description": "lorem ipsum",
         "price": 1500,
         "stock": 6,
-        "pictureURL": "https://picsum.photos/200"
+        "pictureURL": "https://picsum.photos/200",
+        "category": "remeras"
     },
     { 
-        "id": 4,
+        "id": "4",
         "title": "Juguete",
         "description": "lorem ipsum",
         "price": 1500,
         "stock": 3,
-        "pictureURL": "https://picsum.photos/200"
+        "pictureURL": "https://picsum.photos/200",
+        "category": "juguetes"
     }
 ]

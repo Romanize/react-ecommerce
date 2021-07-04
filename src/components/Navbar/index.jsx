@@ -2,27 +2,34 @@ import './index.css';
 import CartWidget from '../CartWidget';
 import logo from '../../assets/BrandLogo.png'
 import { BrandName, links } from '../../config'
+import { Link } from 'react-router-dom'
 
 
 const Navbar = ({cart}) => {
 
     const nav = []
     for(let link in links){ //TODO -- LINK TO REQUIRED
-        nav.push(<a href={links[link]} className="NavbarLink" key={link}>{link} </a>) 
+        nav.push(<Link to={links[link]} className="NavbarLink" key={link}>{link} </Link>) 
     }
 
     return ( 
         <div className="Navbar">
             {/* Left Side */}
             <div className="NavbarBrand">
-                <a href="/index">
+                <Link to="/">
                     <img src={logo} alt="Brand Logo" />
                     {BrandName}
-                </a>
+                </Link>
             </div>
             {/* Right Side */}
             <div className="NavbarNav">
-                {nav}
+                <ul>
+                    <li><Link to="/category/zapatos">Zapatos</Link></li>
+                    <li><Link to="/category/remeras">Remeras</Link></li>
+                    <li><Link to="/category/pantalones">Pantalones</Link></li>
+                    <li><Link to="/category/juguetes">Juguetes</Link></li>
+                </ul>
+                {/* {nav} */}
                 <CartWidget cart={cart}/>
             </div>
         </div>

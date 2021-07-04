@@ -1,5 +1,6 @@
 import Counter from '../Counter'
 import './index.css'
+import { Link } from 'react-router-dom'
 
 function Item({item, handleCart}) {
 
@@ -11,9 +12,9 @@ function Item({item, handleCart}) {
             <h3>{item.price}</h3>
             <div className="ItemCard__inputs">
                 {/* <div className="ItemCard__inputs--buy"></div> */}
-                <Counter stock={item.stock} id={item.id}/>
-                <button onClick={()=> handleCart(item)}>BUY</button>
+                <Counter handleCart={handleCart} item={item}/>
             </div>
+            <Link to={`/item/${item.id}`}>Ver más</Link>
         </div>
     )
 }

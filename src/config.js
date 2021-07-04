@@ -5,5 +5,12 @@ export const links = {
     "Home": "/index",
     "About": "/about",
     "Contact": "/contact",
-    "Account": "/account",
+    "Account": "/account"
 }
+
+export const categories = [
+    "Zapatos",
+    "Pantalones",
+    "Remeras",
+    "Juguetes"
+]

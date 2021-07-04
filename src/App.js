@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar'
 import ItemsListContainer from './containers/ItemsListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 
 function App() {
@@ -23,17 +24,18 @@ function App() {
 
   return (
     <div className="App">
+      <BrowserRouter>
         <Navbar cart={cart}/>
-        {/* Banner Principal */}
-        {/* lista de mas importantes */}
-        <div> {/*TODO-Home view*/}
-          {/* <ItemsListContainer handleCart={handleCart} /> */}
-        </div>
-        <div> {/*TODO-Item Detail View*/}
-          <ItemDetailContainer handleCart={handleCart} />
-        </div>
-        {/* Secciones */}
+          <Switch>
+          {/* Banner Principal */}
+          {/* lista de mas importantes */}
+          <Route exact path="/" component={()=><ItemsListContainer handleCart={handleCart}/>}/>
+          <Route path="/category/:id" component={()=><ItemsListContainer handleCart={handleCart}/>}/>
+          <Route path="/item/:id" component={()=><ItemDetailContainer handleCart={handleCart}/>}/>
+          {/* Secciones */}
+          </Switch>
         {/* Footer */}
+      </BrowserRouter>
     </div>
   );
 }

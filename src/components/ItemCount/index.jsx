@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { IconButton } from '@material-ui/core';
 import './index.css'
 
 function ItemCount({item, onAdd}) {
@@ -31,7 +33,12 @@ function ItemCount({item, onAdd}) {
                 <button onClick={handleAddClick}>+</button>
                 {/* <span className="ItemCounter__error">Invalid Number</span> */}
             </div>
-            <button onClick={()=>{onAdd(qty)}}>Add to Cart</button>
+            <IconButton>
+                
+            </IconButton>
+            <button className='ItemCounter__cartButton' onClick={()=>{onAdd(qty)}}>
+                <ShoppingCartIcon/> Add to Cart
+            </button>
         </>
     )
 }

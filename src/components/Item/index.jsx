@@ -12,22 +12,20 @@ function Item({item}) {
                     <img src={item.pictureURL} alt="" />
                 </div>
             </div>
-            <div className="ItemCard_bodyWrapper">
+            <div className="ItemCard__bodyWrapper">
                 <h3>{item.title}</h3>
-                {/* <h5>{item.description}</h5> */}
-                {/* <h3>{item.price}</h3> */}
-                {/* <div className="ItemCard__inputs"> */}
-                    {/* <div className="ItemCard__inputs--buy"></div> */}
-                    {/* <Counter item={item}/> */}
-                {/* </div> */}
-                <Link to={`/item/${item.id}`}>
-                    <IconButton >
-                        <AddCircleIcon 
-                            className="ItemCard__seeMoreButton"
-                            style={{ fontSize: '2rem' }}
-                        />
-                    </IconButton>
-                </Link>
+                <p>{item.brand}</p>
+                <div className="ItemCard__priceBox">
+                    <h4>$ {item.price}</h4>
+                    <Link to={`/item/${item.id}`}>
+                        <IconButton >
+                            <AddCircleIcon 
+                                className="ItemCard__seeMoreButton"
+                                style={{ fontSize: '2rem' }}
+                            />
+                        </IconButton>
+                    </Link>
+                </div>
             </div>
         </div>
     )

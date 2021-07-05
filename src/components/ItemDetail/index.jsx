@@ -14,16 +14,17 @@ const ItemDetail = ({item}) => {
 
     return (
         <div className='ItemDetailWrapper'>
-            <div>
-                <h1>{item.title}</h1>
-                <img src={item.pictureURL} alt="Cualquier Cosa"/>
+            <div className='ItemDetailWrapper__pictures'>
+                <img src={item.pictureURL} alt={item.title}/> 
             </div>
-            <div>
-                <h3>Descripción: {item.description}</h3>
-                <span>Precio:{item.price}</span><br />
-                <span>Stock : {item.stock}</span>
+            <div className="ItemDetailWrapper__content">
+                <h4>{item.brand}</h4>
+                <h1>{item.title}</h1>
+                <p>{item.description}</p> 
+                {item.stock ? <p>{'Stock: '+item.stock}</p> : <p  style={{color:'var(--red)'}}>No hay Stock</p>}
+                <p>Precio:{item.price}</p><br/>
                 {addedItem ? 
-                    <div><Link to='/cart' ><button>Checkout</button></Link></div>
+                    <div><Link to='/cart' ><button className='ItemDetailWrapper__cartButton'>Checkout</button></Link></div>
                 : 
                     <ItemCount item={item} onAdd={onAdd}/>}             
             </div>

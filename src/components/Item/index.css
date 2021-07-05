@@ -1,7 +1,7 @@
 .ItemCard{
     text-align: center;
     border-radius: 1rem;
-    border: solid 1px lightgray;
+    border: solid 2px lightgray;
     overflow: hidden;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .ItemCard:hover img{
-    transform: translateX(-50%) scale(1.2);
+    transform: translateX(-50%) scale(1.1);
     transform-origin: top;
 }
 
@@ -50,23 +50,24 @@
     box-shadow: 1rem 0px var(--red);
 }
 
-.ItemCard__bodyWrapper{
-    position: absolute;
-}
-
-.ItemCard__inputs{
+.ItemCard__priceBox{
     display: flex;
-    overflow: hidden;
-    border-radius: 0 0 .5rem .5rem;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.ItemCard__inputs--buy{
-    background: yellow;
-    height: 35px;
-    width: 100%;
+
+.ItemCard__bodyWrapper h4{
+    display: inline-block;
+    margin-left: 1.5rem
 }
+
 
 .ItemCard__seeMoreButton{
     color: var(--red);
+}
+
+.ItemCard__priceBox a{
+    margin: .5rem
 }

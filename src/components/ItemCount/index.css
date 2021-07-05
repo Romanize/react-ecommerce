@@ -1,9 +1,23 @@
 .ItemCounter__input{
-    width: 1rem;
+    width: 2rem;
+    text-align: center;
     background: transparent;
     border: none;
-    margin: 0 1rem;
     -moz-appearance: textfield;
+    color: white;
+    font-weight: 600;
+    height: 100%;
+}
+
+.ItemCounter{
+    background: var(--blue);
+    display: inline-flex;
+    width: max-content;
+    align-items: center;
+    height: max-content;
+    border-radius: .3rem;
+    overflow: hidden;
+    margin: 0 1rem 1rem 0;
 }
 
 .ItemCounter__input::-webkit-outer-spin-button,
@@ -13,11 +27,33 @@
 }
 
 .ItemCounter button{
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
+    width: 2.5rem;
+    background: transparent;
+    border:none;
+    color: white;
+    font-size: 1.5rem;
+    vertical-align: middle
+}
+
+.ItemCounter button:hover{
+    background: var(--darkblue);    
+    cursor: pointer;
 }
 
 .ItemCounter__error{
     color: var(--red)
+}
+
+.ItemCounter__cartButton{
+    padding: 0 1rem;
+    background: var(--blue);
+    border:none;
+    color: white;
+    border-radius: .3rem;
+    font-size: 1.5rem;
+}
+
+.ItemCounter__cartButton:hover{
+    background: var(--darkblue);    
+    cursor: pointer;
 }

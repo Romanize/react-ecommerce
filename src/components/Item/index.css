@@ -1,9 +1,8 @@
 .ItemCard{
     text-align: center;
-    /* background: rgba(255,255,255,0.2); */
-    background: red;
     border-radius: 1rem;
-    overflow: visible;
+    border: solid 1px lightgray;
+    overflow: hidden;
 }
 
 .ItemCard h3{
@@ -11,12 +10,48 @@
 }
 
 .ItemCard img{
-    margin-top: 1rem;
-    width: 80%;
+    padding: 2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+    object-fit: cover;
+    width: 100%;
+    transform-origin: top;
+    transition: transform .5s
 }
 
 .ItemCard:hover img{
-    transform: scale(1.2) translateY(-1rem);
+    transform: translateX(-50%) scale(1.2);
+    transform-origin: top;
+}
+
+.ItemCard__imgWrapper{
+    aspect-ratio: 1;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.ItemCard__roundBox{
+    aspect-ratio: 1;
+    height: auto;
+    width: 160%;
+    position: absolute;
+    background-color: var(--gray);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -60%;
+    overflow: hidden;
+    border-bottom: solid 1px lightgray;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 1rem 0px var(--red);
+}
+
+.ItemCard__bodyWrapper{
+    position: absolute;
 }
 
 .ItemCard__inputs{
@@ -30,4 +65,8 @@
     background: yellow;
     height: 35px;
     width: 100%;
+}
+
+.ItemCard__seeMoreButton{
+    color: var(--red);
 }

@@ -1,15 +1,16 @@
 import './index.css';
 import CartWidget from '../CartWidget';
+import NavDropdown from '../NavDropdown';
 import logo from '../../assets/BrandLogo.png'
 import { BrandName, links } from '../../config'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 const Navbar = () => {
 
-    const nav = []
+    const navLinks = []
     for(let link in links){ //TODO -- LINK TO REQUIRED
-        nav.push(<Link to={links[link]} className="NavbarLink" key={link}>{link} </Link>) 
+        navLinks.push(<NavLink activeClassName="NavbarLink--active" exact to={links[link]} className="NavbarLink" key={link}>{link} </NavLink>) 
     }
 
     return ( 
@@ -23,13 +24,8 @@ const Navbar = () => {
             </div>
             {/* Right Side */}
             <div className="NavbarNav">
-                <ul>
-                    <li><Link to="/category/zapatos">Zapatos</Link></li>
-                    <li><Link to="/category/remeras">Remeras</Link></li>
-                    <li><Link to="/category/pantalones">Pantalones</Link></li>
-                    <li><Link to="/category/juguetes">Juguetes</Link></li>
-                </ul>
-                {/* {nav} */}
+                <NavDropdown /> 
+                {navLinks}
                 <CartWidget/>
             </div>
         </div>

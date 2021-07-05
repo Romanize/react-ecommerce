@@ -25,6 +25,12 @@
     padding:.3rem;
     text-decoration: none;
     color: var(--dark);
+    cursor: pointer
+}
+
+.NavbarLink--active{
+    color: var(--red);
+    pointer-events: none;
 }
 
 .NavbarLink:hover{
@@ -38,4 +44,10 @@
 
 .NavbarNav > *{
     margin-right: .7rem;
+}
+
+@media screen and (max-width: 700px){
+    .NavbarNav{
+        display: none;
+    }
 }

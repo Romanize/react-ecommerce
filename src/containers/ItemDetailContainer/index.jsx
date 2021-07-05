@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import './index.css'
 import ItemDetail from '../../components/ItemDetail'
 import {useParams} from 'react-router-dom'
 
@@ -20,9 +19,7 @@ function ItemDetailContainer() {
 
     return (
         <div>
-            <div className='ItemDetailContainer'>
-                <ItemDetail item={item}/>
-            </div> 
+            <ItemDetail item={item}/>
         </div>
     )
 }

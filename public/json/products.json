@@ -5,7 +5,7 @@
         "description": "lorem ipsum",
         "price": 6000,
         "stock": 0,
-        "pictureURL": "https://picsum.photos/200",
+        "pictureURL": "https://picsum.photos/300",
         "category": "zapatos"
     },
     { 
@@ -14,7 +14,7 @@
         "description": "lorem ipsum",
         "price": 3000,
         "stock": 3,
-        "pictureURL": "https://picsum.photos/200",
+        "pictureURL": "https://picsum.photos/300",
         "category": "pantalones"
     },
     { 
@@ -23,7 +23,7 @@
         "description": "lorem ipsum",
         "price": 1500,
         "stock": 6,
-        "pictureURL": "https://picsum.photos/200",
+        "pictureURL": "https://picsum.photos/300",
         "category": "remeras"
     },
     { 
@@ -32,7 +32,7 @@
         "description": "lorem ipsum",
         "price": 1500,
         "stock": 3,
-        "pictureURL": "https://picsum.photos/200",
+        "pictureURL": "https://picsum.photos/300",
         "category": "juguetes"
     }
 ]

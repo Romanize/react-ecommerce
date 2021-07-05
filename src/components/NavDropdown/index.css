@@ -1,0 +1,13 @@
+.dropdownLink{
+    text-decoration: none;
+    color: black
+}
+
+.dropdownLink--active{
+    pointer-events: none;
+    color: var(--gray)
+}
+
+.NavDropdown{
+    z-index: 1000;
+}

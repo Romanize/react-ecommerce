@@ -1,13 +1,15 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import './index.css'
 import ItemsList from '../../components/ItemsList'
 import { useParams } from 'react-router-dom'
+import Loader from '../../components/Loader'
+import { useState } from 'react'
 
 function ItemsListContainer() {
 
-    const {id} = useParams();
-
     const [items, setItems] = useState([])
+
+    const {id} = useParams();
 
     useEffect(()=>{
         async function fetchData(){
@@ -21,9 +23,12 @@ function ItemsListContainer() {
 
     return (
         <div>
-            <div className='favItemsListContainer'>
-                <ItemsList items={items}/>
-            </div> 
+            {!items.length ? 
+                <Loader /> 
+                :
+                <div className='favItemsListContainer'>
+                    <ItemsList items={items}/>
+                </div> }
         </div>
     )
 }

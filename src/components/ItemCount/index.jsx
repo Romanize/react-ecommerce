@@ -1,14 +1,17 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { IconButton } from '@material-ui/core';
 import './index.css'
+import {CartContext} from '../../contexts/CartContext'
 
 function ItemCount({item, onAdd}) {
 
-    const [qty,setQty] = useState(0)
+    const { addItem } = useContext(CartContext)
+
+    const [qty,setQty] = useState(1)
 
     const handleReduceClick = () => {
-        if(qty>0) setQty(qty-1)
+        if(qty>1) setQty(qty-1)
     }
 
     const handleAddClick = () => {
@@ -36,7 +39,10 @@ function ItemCount({item, onAdd}) {
             <IconButton>
                 
             </IconButton>
-            <button className='ItemCounter__cartButton' onClick={()=>{onAdd(qty)}}>
+            <button className='ItemCounter__cartButton' onClick={()=>{
+                onAdd(qty);
+                addItem(item,qty)
+            }}>
                 <ShoppingCartIcon/> Add to Cart
             </button>
         </>

@@ -8,8 +8,6 @@ export const links = {
 }
 
 export const categories = {
-    "Zapatos": 'zapatos',
-    "Pantalones": 'pantalones',
-    "Remeras": 'remeras',
-    "Juguetes": 'juguetes'
+    "CPU": 'CPU',
+    "GPU": 'GPU'
 }

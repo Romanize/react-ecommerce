@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import IconButton from '@material-ui/core/IconButton'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 
-function Item({item}) {
+function Item({item, id}) {
 
     return (
         <div className="ItemCard">
@@ -17,7 +17,7 @@ function Item({item}) {
                 <p>{item.brand}</p>
                 <div className="ItemCard__priceBox">
                     <h4>$ {item.price}</h4>
-                    <Link to={`/item/${item.id}`}>
+                    <Link to={`/item/${id}`}>
                         <IconButton >
                             <AddCircleIcon 
                                 className="ItemCard__seeMoreButton"

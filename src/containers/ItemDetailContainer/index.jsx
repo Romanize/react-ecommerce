@@ -1,26 +1,32 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import ItemDetail from '../../components/ItemDetail'
 import {useParams} from 'react-router-dom'
+import Loader from '../../components/Loader'
+import { CartContext } from '../../contexts/CartContext'
 import './index.css'
 
 function ItemDetailContainer() {
     const {id} = useParams()
 
-    const [item, setItem] = useState({})
+    const [item, setItem] = useState(null)
+    const { items } = useContext(CartContext)
 
     useEffect(()=>{
-        async function fetchData(){
-            const response = await fetch("/json/products.json")
-            const result = await response.json()
-            const item = result.find(item=>item.id === id)
-            setItem(item)
+        if(items){
+            const itemFound = items.docs.find(item=>item.id === id)
+            setItem(itemFound)
         }
-        fetchData()
-    },[id])
+    },[id, items])
 
     return (
-        <div className="ItemDetailContainer">
-            <ItemDetail item={item}/>
+        <div>
+            {!item ? 
+                <Loader /> 
+                :
+                <div className="ItemDetailContainer">
+                    <ItemDetail item={item}/>
+                </div>
+            }
         </div>
     )
 }

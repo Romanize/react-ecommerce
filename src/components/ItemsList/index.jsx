@@ -1,10 +1,11 @@
 import Item from '../Item'
 
 function ItemList({items}) {
+
     return (
         <>
-            {items.map(item => { //TODO-Find more popular products
-                return <Item item={item} key={item.id}/>
+            {items.map(item => {
+                return <Item item={item.data()} id={item.id} key={item.id}/>
             })
             }
         </>

@@ -18,7 +18,7 @@ function App() {
             {/* Banner Principal */}
             {/* lista de mas importantes */}
             <Route exact path="/" component={ItemsListContainer}/>
-            <Route path="/category/:id" component={ItemsListContainer}/>
+            <Route path="/category/:categoryId" component={ItemsListContainer}/>
             <Route path="/item/:id"component={ItemDetailContainer}/>
             <Route path="/cart"component={Cart}/>
             {/* Secciones */}

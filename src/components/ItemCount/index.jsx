@@ -15,17 +15,17 @@ function ItemCount({item, onAdd}) {
     }
 
     const handleAddClick = () => {
-        if(qty<item.stock) setQty(qty+1)
+        if(qty<item.data().stock) setQty(qty+1)
     }
 
     const handleInputChange = (e) => {
         let value = e.target.value;
         console.log(typeof value, value)
-        if(value>item.stock || value<0) {
+        if(value>item.data().stock || value<0) {
             setQty(qty)
             return alert('Invalid quantity')
         }
-        setQty(value)
+        setQty(Number(value))
     }
 
     return (

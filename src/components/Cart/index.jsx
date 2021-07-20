@@ -1,6 +1,7 @@
 import {useContext} from 'react'
 import { CartContext } from '../../contexts/CartContext'
 import { Link } from 'react-router-dom'
+import CheckoutForm from '../CheckoutForm'
 
 function Cart() {
 
@@ -10,9 +11,9 @@ function Cart() {
         cart.length ? 
             <div>
                 <div className="Cart__List">
-                    {cart.map(product=>{
+                    {cart.map((product, index)=>{
                         return ( 
-                            <div key={product.id}>
+                            <div key={index}>
                                 <img src={product.pictureURL} alt={product.title} />
                                 <h3>{product.title}</h3>
                                 <span>Subtotal: {product.price * product.quantity}</span><br />
@@ -22,6 +23,7 @@ function Cart() {
                         )
                     })}
                 </div>
+                <CheckoutForm/>
                 <div className="Cart__Footer">
                     <p>Total: {sumTotals()}</p>
                     <button onClick={clear}>Empty Cart</button>

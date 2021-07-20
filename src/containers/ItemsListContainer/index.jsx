@@ -1,34 +1,36 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import './index.css'
 import ItemsList from '../../components/ItemsList'
 import { useParams } from 'react-router-dom'
 import Loader from '../../components/Loader'
-import { useState } from 'react'
+import { CartContext } from '../../contexts/CartContext'
+import { useContext } from 'react'
 
 function ItemsListContainer() {
 
-    const [items, setItems] = useState([])
+    const {items} = useContext(CartContext)
+    const [result, setResult] = useState(null)
 
-    const {id} = useParams();
+    const {categoryId} = useParams();
 
     useEffect(()=>{
-        async function fetchData(){
-            const response = await fetch("/json/products.json")
-            let result = await response.json()
-            if(id) result = result.filter(item=>item.category === id)
-            setItems(result)
+        if(categoryId && items){
+            const itemsFound = items.docs.filter(item=>item.data().category === categoryId)
+            setResult(itemsFound)
+        } else if (items){
+            setResult(items.docs)
         }
-        fetchData()
-    },[id])
+    },[categoryId, items])
 
     return (
         <div>
-            {!items.length ? 
+            {!result ? 
                 <Loader /> 
                 :
                 <div className='favItemsListContainer'>
-                    <ItemsList items={items}/>
-                </div> }
+                    <ItemsList items={result}/>
+                </div> 
+            }
         </div>
     )
 }

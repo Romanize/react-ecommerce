@@ -8,11 +8,13 @@ import { useContext } from 'react'
 
 function ItemsListContainer() {
 
-    const {items} = useContext(CartContext)
-    const [result, setResult] = useState(null)
+    const { items } = useContext(CartContext);
 
-    const {categoryId} = useParams();
+    const [ result , setResult ] = useState(null);
 
+    const { categoryId } = useParams();
+
+    //Filter by category
     useEffect(()=>{
         if(categoryId && items){
             const itemsFound = items.docs.filter(item=>item.data().category === categoryId)

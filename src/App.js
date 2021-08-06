@@ -1,10 +1,14 @@
 import './App.css';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
 import ItemsListContainer from './containers/ItemsListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
-import {CartContextComponent} from './contexts/CartContext'
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Cart from './components/Cart';
+import Contact from './screens/Contact';
+import About from './screens/About';
+import Account from './screens/Account';
+
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {CartContextComponent} from './contexts/CartContext'
 
 
 function App() {
@@ -21,9 +25,10 @@ function App() {
             <Route path="/category/:categoryId" component={ItemsListContainer}/>
             <Route path="/item/:id"component={ItemDetailContainer}/>
             <Route path="/cart"component={Cart}/>
-            {/* Secciones */}
+            <Route path="/contact"component={Contact}/>
+            <Route path="/about"component={About}/>
+            <Route path="/account"component={Account}/>
             </Switch>
-          {/* Footer */}
         </BrowserRouter>
       </CartContextComponent>
     </div>

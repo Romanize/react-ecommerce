@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect} from 'react';
-import { db } from '../firebase/firebase'
+import { db } from '../firebase'
 
 export const CartContext = createContext()
 
@@ -11,6 +11,7 @@ export function CartContextComponent({children}) {
 
     useEffect(()=>{
         function fetchData(){
+            //Using snapshot we capture real time changes on DB. 
             db.collection("products").onSnapshot(docs => setItems(docs))
         }
     fetchData()

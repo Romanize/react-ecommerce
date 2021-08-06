@@ -6,7 +6,7 @@ import { CartContext } from '../../contexts/CartContext'
 import './index.css'
 
 function ItemDetailContainer() {
-    const {id} = useParams()
+    const { id } = useParams()
 
     const [item, setItem] = useState(null)
     const { items } = useContext(CartContext)

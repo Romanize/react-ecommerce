@@ -5,11 +5,10 @@ import logo from '../../assets/BrandLogo.png'
 import { BrandName, links } from '../../config'
 import { Link, NavLink } from 'react-router-dom'
 
-
-
 const Navbar = () => {
 
     const navLinks = []
+    
     for(let link in links){ //TODO -- LINK TO REQUIRED
         navLinks.push(<NavLink activeClassName="NavbarLink--active" exact to={links[link]} className="NavbarLink" key={link}>{link} </NavLink>) 
     }

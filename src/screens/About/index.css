@@ -1,0 +1,9 @@
+.AboutContainer{
+  margin:2rem;
+  display: flex;
+  justify-content: center;
+  border: solid 1px var(--gray);
+  border-radius: 1rem;
+  min-height: calc(100vh - 8rem);
+  align-items: center;
+}

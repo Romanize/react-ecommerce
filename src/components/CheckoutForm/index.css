@@ -1,0 +1,21 @@
+.CheckoutForm input{
+  width: 100%;
+  margin: .5rem 0;
+  padding: .3rem;
+  border-radius: .5rem;
+  border: solid 1px var(--gray)
+}
+
+.CheckoutForm input[type=submit]{
+  background-color: var(--blue);
+  color: white;
+  font-weight: bold;
+}
+
+.CheckoutForm input[type=submit]:active{
+  background-color: var(--blue);
+}
+
+.CheckoutForm input[type=submit]:hover{
+  background-color: var(--darkblue);
+}

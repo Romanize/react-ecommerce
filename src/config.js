@@ -9,5 +9,9 @@ export const links = {
 
 export const categories = {
     "CPU": 'CPU',
-    "GPU": 'GPU'
+    "GPU": 'GPU',
+    "RAM MEMORY" : 'RAM MEMORY',
+    "CASE" : 'CASE',
+    'MOUSE' : 'MOUSE',
+    'KEYBOARD' : 'KEYBOARD'
 }

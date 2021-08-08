@@ -8,7 +8,7 @@ function ItemCount({item, onAdd}) {
 
     const { addItem } = useContext(CartContext)
 
-    const [qty,setQty] = useState(1)
+    const [qty,setQty] = useState(0)
 
     const handleReduceClick = () => {
         if(qty>1) setQty(qty-1)
@@ -20,7 +20,7 @@ function ItemCount({item, onAdd}) {
 
     const handleInputChange = (e) => {
         let value = e.target.value;
-        console.log(typeof value, value)
+
         if(value>item.data().stock || value<0) {
             setQty(qty)
             return alert('Invalid quantity')
@@ -40,6 +40,10 @@ function ItemCount({item, onAdd}) {
                 
             </IconButton>
             <button className='ItemCounter__cartButton' onClick={()=>{
+                if(qty === 0) {
+                    alert('Invalid quantity, you need to select 1 or more quantity')
+                    return
+                }
                 onAdd(qty);
                 addItem(item,qty)
             }}>

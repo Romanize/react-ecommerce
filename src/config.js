@@ -1,4 +1,4 @@
-export const BrandName = 'Any Store'
+export const BrandName = 'Techno Store'
 
 //Navbar Links
 export const links = {
@@ -10,7 +10,7 @@ export const links = {
 export const categories = {
     "CPU": 'CPU',
     "GPU": 'GPU',
-    "RAM MEMORY" : 'RAM MEMORY',
+    "RAM" : 'RAM',
     "CASE" : 'CASE',
     'MOUSE' : 'MOUSE',
     'KEYBOARD' : 'KEYBOARD'

@@ -34,7 +34,7 @@ function Cart() {
                             })}
                         </div>
                     <div className="Cart__List--Footer">
-                        <p>Total: <b>{sumTotals()}</b></p>
+                        <p>Total: $<b>{sumTotals()}</b></p>
                         <button className="Cart__Clear" onClick={clear}>
                             <DeleteForeverIcon />
                             <span>Empty Cart</span>

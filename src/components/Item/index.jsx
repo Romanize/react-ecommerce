@@ -9,7 +9,7 @@ function Item({item, id}) {
         <div className="ItemCard">
             <div className='ItemCard__imgWrapper'>
                 <div className="ItemCard__roundBox">
-                    <img src={item.pictureURL} alt="" />
+                    <img src={item.pictureURL} alt={item.title} />
                 </div>
             </div>
             <div className="ItemCard__bodyWrapper">

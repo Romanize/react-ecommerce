@@ -3,6 +3,8 @@
     border-radius: 1rem;
     border: solid 2px lightgray;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .ItemCard h3{
@@ -17,13 +19,14 @@
     top: 20%;
     object-fit: cover;
     width: 100%;
-    transform-origin: top;
+    height: auto;
+    transform-origin: center;
     transition: transform .5s
 }
 
 .ItemCard:hover img{
     transform: translateX(-50%) scale(1.1);
-    transform-origin: top;
+    transform-origin: center;
 }
 
 .ItemCard__imgWrapper{
@@ -55,12 +58,18 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto;
 }
 
+.ItemCard__bodyWrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
 
 .ItemCard__bodyWrapper h4{
     display: inline-block;
-    margin-left: 1.5rem
+    margin-left: 1.5rem;
 }
 
 
@@ -69,5 +78,5 @@
 }
 
 .ItemCard__priceBox a{
-    margin: .5rem
+    margin: .5rem;
 }
